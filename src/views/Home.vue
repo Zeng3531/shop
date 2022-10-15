@@ -1,18 +1,21 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+        <el-button @click="romoveToken">退出登录</el-button>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+
+    methods: {
+        romoveToken() {
+            this.$store.state.token = ''
+            this.$router.push('/login')
+        }
+    },
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
